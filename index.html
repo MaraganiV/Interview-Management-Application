@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interview Management Application</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <nav>
+    <h1>Interview Management👩‍💻</h1>
+    <ul id="navMenu" class="hidden">
+      <li><a href="#" onclick="showPage('home')">Home</a></li>
+      <li><a href="#" onclick="showPage('schedule')">Schedule</a></li>
+      <li><a href="#" onclick="showPage('view')">View</a></li>
+      <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+  </nav>
+
+
+  <section id="loginPage" class="page card">
+    <h2>Login</h2>
+     <form id="loginForm" autocomplete="off">
+  <label>👤Username:
+    <input type="text" id="username" required autocomplete="off">
+  </label>
+  <label>🔑Password:
+    <input type="password" id="password" required autocomplete="new-password">
+  </label>
+  <button type="submit">Login</button>
+</form>
+
+    </form>
+    
+  </section>
+
+  
+  <main id="app" class="hidden">
+
+    
+    <section id="home" class="page card">
+      <h2>WELCOME🎉</h2>
+      <p>This application helps you <b>schedule</b> and <b>manage job interviews</b> efficiently.👩‍🎓👩‍💻</p>
+    </section>
+
+    
+    <section id="schedule" class="page card hidden">
+      <h2>Schedule an Interview</h2>
+      <form id="interviewForm">
+        <input type="hidden" id="editIndex">
+        <label>👤Candidate Name:<input type="text" id="candidate" required></label>
+        <label>📧Email:<input type="email" id="email" required></label>
+        <label>👩‍🎓Role/Position:<input type="text" id="role" required></label>
+        <label>📅Date:<input type="date" id="date" required></label>
+        <label>⏱️Time:<input type="time" id="time" required></label>
+        <label>👩‍💻Interviewer:<input type="text" id="interviewer" required></label>
+        <button type="submit" id="submitBtn">Schedule</button>
+      </form>
+    </section>
+
+    
+    <section id="view" class="page card hidden">
+      <h2>Scheduled Interviews</h2>
+
+      <input type="text" id="search" placeholder="Search by candidate name..." onkeyup="searchInterview()">
+      <label>
+        👩‍🎓
+        <input type="date" id="filterDate" onchange="filterByDate()">
+       </label>
+
+      <table id="interviewTable">
+        <thead>
+          <tr>
+            <th>Candidate</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Interviewer</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
