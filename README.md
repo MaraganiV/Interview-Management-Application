@@ -31,3 +31,7 @@ An easy-to-use web app to help schedule and manage job interviews. Users can log
 3. Open `index.html` in your browser
 4. Log in with username: `admin`, password: `1234` to access functionality.
 
+## Author
+  Maragani Vyshnavi, used front end
+
+
